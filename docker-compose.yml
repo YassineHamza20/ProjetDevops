@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: 
       MYSQL_DATABASE: achatdb
     ports:
       - "3306:3306"
@@ -29,14 +29,12 @@ services:
           "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
           "spring.datasource.initialization-mode": "always"
         }
-    stdin_open: true
-    tty: true
     expose:
-      - "8089" 
+      - "8089"
     labels:
-      prometheus.io/scrape: "true"
-      prometheus.io/path: "/actuator/prometheus"
-      prometheus.io/port: "8089"
+      - "prometheus.io/scrape=true"
+      - "prometheus.io/path=/actuator/prometheus"
+      - "prometheus.io/port=8089"
 
 volumes:
-  db-data: {}
+  db-data:
