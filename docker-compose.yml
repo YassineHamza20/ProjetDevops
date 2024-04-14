@@ -17,7 +17,7 @@ services:
     build: .
     depends_on:
       - mysqldb
-    image: manargn/achatimg:3.0.jar
+    image: manargn/achatimg:3.0.0
     restart: on-failure
     container_name: back
     ports:
