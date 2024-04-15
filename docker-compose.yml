@@ -29,12 +29,8 @@ services:
           "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
           "spring.datasource.initialization-mode": "always"
         }
-    expose:
-      - "8089"
-    labels:
-      - "prometheus.io/scrape=true"
-      - "prometheus.io/path=/actuator/prometheus"
-      - "prometheus.io/port=8089"
+    stdin_open: true
+    tty: true
 
 volumes:
-  db-data:
+  db-data: {}
