@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient} from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StockService {
-  readonly API_URL = 'http://92.168.1.30/:8088/SpringMVC/stock';
+  readonly API_URL = 'http://192.168.1.30/:8088/SpringMVC/stock';
 
   constructor(private httpClient: HttpClient) {}
 
