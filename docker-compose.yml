@@ -2,16 +2,15 @@ version: "2.2"
 services:
   frontimage:
     build: ./
-    image: "yassine17/achatfront-1.0
-    ports:"4200:4200"
-
+    image: "yassine17/achatfront-1.0"
+    ports:
+      - "4200:4200"
 
   mysql:
     image: "mysql"
     environment:
-      
-MYSQL_ROOT_PASSWORD=
-MYSQL_ALLOW_EMPTY_PASSWORD=yes
-MYSQL_DATABASE=devopsdb
-ports:
-"3307:3306"
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "devopsdb"
+    ports:
+      - "3307:3306"
